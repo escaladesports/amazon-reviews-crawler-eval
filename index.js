@@ -58,10 +58,7 @@ module.exports = function (opt) {
 		if (els.date) {
 			date = els.date.textContent.trim()
 			if (date.indexOf('on ') === 0) {
-				date = new Date(date.replace('on ', ''))
-				if (date == 'Invalid Date') {
-					date = undefined;
-				}
+				date = date.replace('on ', '')
 			}
 		}
 
