@@ -1,6 +1,6 @@
 {
   "name": "amazon-reviews-crawler-eval",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "index.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "license": "MIT"
