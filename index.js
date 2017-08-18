@@ -20,7 +20,9 @@ module.exports = function (opt) {
 	if (!opt) opt = {}
 	if (!('elements' in opt)) opt.elements = {}
 	for (var i in elDefaults) {
-
+		if (!(i in opt.elements)) {
+			opt.elements[i] = elDefaults[i]
+		}
 	}
 
 	var reviews = document.querySelectorAll(opt.elements.reviewBlock)
