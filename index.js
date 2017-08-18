@@ -1,5 +1,6 @@
 'use strict'
-module.exports = opt => {
+module.exports = function (opt) {
+	console.log('Running eval...')
 
 	// Default options
 	var elDefaults = {
@@ -15,12 +16,11 @@ module.exports = opt => {
 		author: '.review-byline a',
 		date: '.review-date'
 	}
-	if(!opt) opt = {}
-	if(!('elements' in opt)) opt.elements = {}
-	for(var i in opt.elDefaults){
-		if(!(i in opt.elements)){
-			opt.elements[i] = elDefaults[i]
-		}
+	console.log(elDefaults)
+	if (!opt) opt = {}
+	if (!('elements' in opt)) opt.elements = {}
+	for (var i in elDefaults) {
+
 	}
 
 	var reviews = document.querySelectorAll(opt.elements.reviewBlock)
