@@ -1,6 +1,28 @@
 'use strict'
 module.exports = opt => {
-	// Switch to ES5 since this executes in browser
+
+	// Default options
+	var elDefaults = {
+		// Searches whole page
+		productTitle: '.product-title',
+		reviewBlock: '.review',
+		// Searches within elements.reviewBlock
+		link: 'a',
+		title: '.review-title',
+		rating: '.review-rating',
+		ratingPattern: 'a-star-',
+		text: '.review-text',
+		author: '.review-byline a',
+		date: '.review-date'
+	}
+	if(!opt) opt = {}
+	if(!('elements' in opt)) opt.elements = {}
+	for(var i in opt.elDefaults){
+		if(!(i in opt.elements)){
+			opt.elements[i] = elDefaults[i]
+		}
+	}
+
 	var reviews = document.querySelectorAll(opt.elements.reviewBlock)
 	var title = document.querySelector(opt.elements.productTitle)
 	title = title ? title.textContent : 'Not found'
