@@ -13,7 +13,7 @@ module.exports = function (opt) {
 		rating: '.review-rating',
 		ratingPattern: 'a-star-',
 		text: '.review-text',
-		author: '.review-byline a',
+		author: '.a-profile-name',
 		date: '.review-date'
 	}
 	console.log(elDefaults)
